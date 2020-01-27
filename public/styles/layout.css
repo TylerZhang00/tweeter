@@ -4,14 +4,20 @@
  * Do not modify these two selectors, please
  */
 html {
+  font-family: "Bungee Hairline", cursive, "sans-serif";
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
+
+ WON'T THIS BODY OVERRIDE HEADER CSS?
+ HOW DOES HTML KNOW WHICH CSS FILE TO CALL?
  */
 
 body {

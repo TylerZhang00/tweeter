@@ -1,0 +1,14 @@
+header {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+  background-color: #edaf53;
+  background-image: url("https://www.transparenttextures.com/patterns/straws.png");
+}
