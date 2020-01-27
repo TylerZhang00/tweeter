@@ -17,6 +17,14 @@ html {
  * Global layout stuff
  */
 
+main {
+  background-color: #f4f1ec;
+  position: absolute;
+  width: 90%;
+  text-align: right;
+  left: 5%;
+}
+
 body {
   color: #545149;
   background-color: #f4f1ec;
