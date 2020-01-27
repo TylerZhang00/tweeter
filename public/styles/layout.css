@@ -15,9 +15,6 @@ html {
 
 /*
  * Global layout stuff
-
- WON'T THIS BODY OVERRIDE HEADER CSS?
- HOW DOES HTML KNOW WHICH CSS FILE TO CALL?
  */
 
 body {
