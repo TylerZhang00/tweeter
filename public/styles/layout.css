@@ -18,10 +18,11 @@ html {
  */
 
 main {
+  color: black;
   background-color: #f4f1ec;
   position: absolute;
   width: 90%;
-  text-align: right;
+  text-align: left;
   left: 5%;
 }
 
