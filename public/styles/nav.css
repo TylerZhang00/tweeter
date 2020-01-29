@@ -1,5 +1,6 @@
 #mainpage-nav {
   position: fixed;
+  font-weight: bold;
   top: 0;
   height: 120px;
   width: 100%;
