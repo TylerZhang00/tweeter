@@ -53,6 +53,20 @@ const createTweetElement = function(tweet) {
 
 const renderTweets = function(tweets) {
   tweets.forEach(element => {
-    $(".tweets-container").append(createTweetElement(element));
+    $(".tweets-container").prepend(createTweetElement(element));
   });
 };
+
+// CREATE AJAX POST REQUEST THAT SENDS FORM DATA TO SERVER
+
+$(function() {
+  const $button = $("#form");
+  $button.submit(function(event) {
+    event.preventDefault();
+    console.log("Button clicked, performing ajax call...");
+    $.ajax("/tweets", {
+      method: "POST",
+      data: $(this).serialize()
+    }).then(function(data) {});
+  });
+});
