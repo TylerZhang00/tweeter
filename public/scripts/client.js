@@ -8,17 +8,22 @@ $(function() {
       renderTweets(data);
     });
   };
-
   // CREATES AJAX POST TWEETS THAT RENDERS POSTED TWEETS
   const $form = $("#form");
   $form.submit(function(event) {
     event.preventDefault();
-    $.ajax("/tweets", {
-      method: "POST",
-      data: $(this).serialize()
-    }).then(function() {
-      loadTweets();
-    });
+    if ($(this).serialize() === "") {
+      alert("It's Canada! You cannot plead the fifth!");
+    } else if ($(this).serialize().length > 140) {
+      alert("TLDR");
+    } else {
+      $.ajax("/tweets", {
+        method: "POST",
+        data: $(this).serialize()
+      }).then(function() {
+        loadTweets();
+      });
+    }
   });
 
   loadTweets();
