@@ -25,6 +25,8 @@ $(function() {
       });
     }
   });
+  /* CALL LOAD TWEETS WHICH WILL RENDER ORIGINAL TWEETS, THEN ON SUBMIT
+  ADDITIONAL POSTED TWEETS GET RENDERED */
 
   loadTweets();
 });
@@ -35,15 +37,15 @@ USED IN RENDER TWEETS*/
 const createTweetElement = function(tweet) {
   const postedtweets = `<article class="postedtweets">
   <div class="tweetheader">
-  <img src=${tweet.user.avatars} >
-  <h4 class="tweetname">${tweet.user.name}</h4>
-  <h4 class="tweethandle">${tweet.user.handle}</h4>
+  <img src=${escape(tweet.user.avatars)} >
+  <h4 class="tweetname">${escape(tweet.user.name)}</h4>
+  <h4 class="tweethandle">${escape(tweet.user.handle)}</h4>
   </div>
   <p class="tweetcontent">
-  ${tweet.content.text}
+  ${escape(tweet.content.text)}
   </p>
   <p class="tweetdate">
-  ${tweet.content.created_at}
+  ${escape(tweet.content.created_at)}
   </p>
   </article>`;
 
@@ -55,4 +57,10 @@ const renderTweets = function(tweets) {
   tweets.forEach(element => {
     $(".tweets-container").prepend(createTweetElement(element));
   });
+};
+
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };

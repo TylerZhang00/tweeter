@@ -8,6 +8,11 @@
   background-color: rgb(236, 236, 236);
 }
 
+.belowarticle {
+  display: flex;
+  justify-content: space-between;
+}
+
 #counter {
   text-align: right;
   margin: 0px;
@@ -17,6 +22,7 @@
   align-content: left;
   margin: 0px;
 }
+
 .over {
   color: red;
 }
