@@ -11,6 +11,7 @@ function objectifyForm(formArray) {
 $(function() {
   $("#errormessage").hide();
   $("#errormessage2").hide();
+  $("#jump").hide();
 
   const loadTweets = function() {
     $.ajax("/tweets", {
@@ -58,6 +59,29 @@ $(function() {
     $("#errormessage").hide();
     $("#errormessage2").hide();
   });
+
+  // BACK TO TOP BUTTON
+  mybutton = document.getElementById("jump");
+
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 600 ||
+      document.documentElement.scrollTop > 600
+    ) {
+      mybutton.style.display = "block";
+      $("#toggle").hide();
+    } else {
+      mybutton.style.display = "none";
+      $("#toggle").show();
+    }
+  }
+  $("#jump").click(function topFunction() {
+    document.documentElement.scrollTop = 0;
+  });
 });
 
 /* THIS RETURNS THE TWEET WITH PROPER HTML
@@ -66,18 +90,17 @@ USED IN RENDER TWEETS*/
 const createTweetElement = function(tweet) {
   const postedtweets = `<article class="postedtweets">
   <div class="tweetheader">
-  <img src=${escape(tweet.user.avatars)} >
-  <h4 class="tweetname">${escape(tweet.user.name)}</h4>
-  <h4 class="tweethandle">${escape(tweet.user.handle)}</h4>
+    <img src=${escape(tweet.user.avatars)} >
+    <h4 class="tweetname">${escape(tweet.user.name)}</h4>
+    <h4 class="tweethandle">${escape(tweet.user.handle)}</h4>
   </div>
-  <p class="tweetcontent">
-  ${escape(tweet.content.text)}
-  </p>
-  <p class="tweetdate">
-  ${escape(tweet.content.created_at)}
-  </p>
+    <p class="tweetcontent">
+      ${escape(tweet.content.text)}
+    </p>
+    <p class="tweetdate">
+      ${escape(tweet.content.created_at)}
+    </p>
   </article>`;
-
   return postedtweets;
 };
 

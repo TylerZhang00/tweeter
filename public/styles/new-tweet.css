@@ -8,6 +8,19 @@
   background-color: #fcf5fb;
 }
 
+#jump {
+  position: fixed;
+  right: 0.5%;
+  bottom: 2%;
+  background-color: #be9cf1;
+  border: none;
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
 .belowarticle {
   margin-top: 5px;
   display: flex;
