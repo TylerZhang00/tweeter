@@ -5,16 +5,16 @@
   font-size: 25pt;
   font-weight: bold;
   color: #b1b347;
-  background-color: rgb(236, 236, 236);
+  background-color: #fcf5fb;
 }
 
 .belowarticle {
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
 }
 
 #counter {
-  text-align: right;
   margin: 0px;
 }
 

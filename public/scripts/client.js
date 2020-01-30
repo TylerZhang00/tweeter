@@ -1,3 +1,12 @@
+//SERIALIZE DATA FUNCTION
+function objectifyForm(formArray) {
+  const returnArray = {};
+  for (let i = 0; i < formArray.length; i++) {
+    returnArray[formArray[i]["name"]] = formArray[i]["value"];
+  }
+  return returnArray;
+}
+
 // CREATE AJAX GET REQUEST THAT RENDERS INITIAL TWEETS
 $(function() {
   const loadTweets = function() {
@@ -12,9 +21,14 @@ $(function() {
   const $form = $("#form");
   $form.submit(function(event) {
     event.preventDefault();
-    if ($(this).serialize() === "") {
+
+    // CHECKS ARTICLE FOR ERRORS, IF NONE > AJAX
+    const myFormArray = $(this).serializeArray();
+    const myFormObject = objectifyForm(myFormArray);
+
+    if (myFormObject["text"] === "") {
       alert("It's Canada! You cannot plead the fifth!");
-    } else if ($(this).serialize().length > 140) {
+    } else if (myFormObject["text"].length > 140) {
       alert("TLDR");
     } else {
       $.ajax("/tweets", {
@@ -29,6 +43,11 @@ $(function() {
   ADDITIONAL POSTED TWEETS GET RENDERED */
 
   loadTweets();
+
+  $("#toggle").click(function() {
+    console.log("HI");
+    $(".new-tweet").slideToggle("fast");
+  });
 });
 
 /* THIS RETURNS THE TWEET WITH PROPER HTML
@@ -59,6 +78,7 @@ const renderTweets = function(tweets) {
   });
 };
 
+// ESCAPE XSS
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));

@@ -9,3 +9,16 @@
   z-index: 2;
   padding: 1.5em;
 }
+
+#toggle {
+  opacity: 0.4;
+  float: right;
+  background-color: #ece4f8;
+  border-style: outset;
+  border-color: #a081cf;
+  border-width: 5px;
+}
+
+#toggle:hover {
+  opacity: 1;
+}

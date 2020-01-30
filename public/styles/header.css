@@ -8,5 +8,10 @@ header {
   padding-top: 20px;
   color: rgb(255, 255, 255);
   background-color: #d4aed3;
-  background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+  background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png");
+}
+
+#myprofilepic {
+  height: 225px;
+  width: 200px;
 }
