@@ -98,7 +98,7 @@ const createTweetElement = function(tweet) {
       ${escape(tweet.content.text)}
     </p>
     <p class="tweetdate">
-      ${escape(tweet.content.created_at)}
+      ${moment(tweet.created_at).fromNow()}
     </p>
   </article>`;
   return postedtweets;

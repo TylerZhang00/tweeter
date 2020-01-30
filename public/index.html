@@ -35,6 +35,10 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+
+    <!-- DATE REQUIREMENT -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" /> </script>
   </head>
 
   <body>
@@ -44,36 +48,41 @@
       <button id="toggle">Send Message</button>
     </nav>
 
-    <header>
-      <div>
-        <img id="myprofilepic" src="/images/profile-hex.png" />
+    <div class="wholepage">
+      <header>
+        <div>
+          <img id="myprofilepic" src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div>
+          <h2>Yiqi Zhang</h2>
+        </div>
+      </header>
+      <div class="halfpage">
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+          <section class="new-tweet">
+            <h2>Compose Message</h2>
+            <form id="form" action="/tweets/" method="post">
+              <button id="jump">上</button>
+              <textarea
+                class="composemessage"
+                name="text"
+                placeholder="Say Something Profound..."
+              ></textarea>
+              <div class="belowarticle">
+                <p id="counter">140</p>
+                <p id="errormessage">
+                  It's Canada! You cannot plead the fifth!
+                </p>
+                <p id="errormessage2">TLDR</p>
+                <input id="submit" type="submit" value="Send" />
+              </div>
+            </form>
+          </section>
+          <div class="tweets-container"></div>
+        </main>
       </div>
-      <br />
-      <div>
-        <h2>Yiqi Zhang</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Message</h2>
-        <form id="form" action="/tweets/" method="post">
-          <button id="jump">上</button>
-          <textarea
-            class="composemessage"
-            name="text"
-            placeholder="Say Something Profound..."
-          ></textarea>
-          <div class="belowarticle">
-            <p id="counter">140</p>
-            <p id="errormessage">It's Canada! You cannot plead the fifth!</p>
-            <p id="errormessage2">TLDR</p>
-            <input id="submit" type="submit" value="Send" />
-          </div>
-        </form>
-      </section>
-      <div class="tweets-container"></div>
-    </main>
+    </div>
   </body>
 </html>

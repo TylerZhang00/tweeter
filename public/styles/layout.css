@@ -13,9 +13,10 @@ html {
  */
 
 main {
+  position: relative;
+  margin-top: 70px;
   color: black;
   background-color: #f4f1ec;
-  position: absolute;
   width: 90%;
   text-align: left;
   left: 5%;
@@ -25,4 +26,13 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+}
+
+@media (min-width: 800px) {
+  .wholepage {
+    display: flex;
+  }
+  .halfpage {
+    margin: auto;
+  }
 }
