@@ -14,12 +14,19 @@
   justify-content: space-between;
 }
 
+#errormessage {
+  margin: 0px;
+}
+
+#errormessage2 {
+  margin: 0px;
+}
+
 #counter {
   margin: 0px;
 }
 
 #submit {
-  align-content: left;
   margin: 0px;
 }
 

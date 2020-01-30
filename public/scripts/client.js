@@ -9,6 +9,9 @@ function objectifyForm(formArray) {
 
 // CREATE AJAX GET REQUEST THAT RENDERS INITIAL TWEETS
 $(function() {
+  $("#errormessage").hide();
+  $("#errormessage2").hide();
+
   const loadTweets = function() {
     $.ajax("/tweets", {
       method: "GET"
@@ -27,9 +30,11 @@ $(function() {
     const myFormObject = objectifyForm(myFormArray);
 
     if (myFormObject["text"] === "") {
-      alert("It's Canada! You cannot plead the fifth!");
+      $("#errormessage").show();
+      $("#errormessage2").hide();
     } else if (myFormObject["text"].length > 140) {
-      alert("TLDR");
+      $("#errormessage2").show();
+      $("#errormessage").hide();
     } else {
       $.ajax("/tweets", {
         method: "POST",
@@ -44,9 +49,14 @@ $(function() {
 
   loadTweets();
 
+  // TOGGLE BUTTON
   $("#toggle").click(function() {
-    console.log("HI");
     $(".new-tweet").slideToggle("fast");
+  });
+  // ERASE ERRORS ON CLICK
+  $(".composemessage").click(function() {
+    $("#errormessage").hide();
+    $("#errormessage2").hide();
   });
 });
 
