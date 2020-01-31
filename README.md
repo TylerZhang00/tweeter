@@ -18,3 +18,11 @@ This repository is the starter code for the project: Students will fork and clon
 - MD5
 - Bodyparser
 - Chance
+
+## Screenshots
+
+!["Vertical Screenshot"](https://github.com/TylerZhang00/tweeter/blob/master/docs/Vertical%20Compressed%20Mode.png?raw=true)
+
+!["Main Page"](https://github.com/TylerZhang00/tweeter/blob/master/docs/Tweet%20Page.png?raw=true)
+
+!["Tweet Too Long"](https://github.com/TylerZhang00/tweeter/blob/master/docs/Error%20Message.png?raw=true)
