@@ -49,6 +49,7 @@
     </nav>
 
     <div class="wholepage">
+      <div class="halfpage2">
       <header>
         <div>
           <img id="myprofilepic" src="/images/profile-hex.png" />
@@ -58,25 +59,26 @@
           <h2>Yiqi Zhang</h2>
         </div>
       </header>
+    </div>
       <div class="halfpage">
         <!-- Page-specific (main) content here -->
         <main class="container">
+          <button id="jump">上</button>
           <section class="new-tweet">
             <h2>Compose Message</h2>
             <form id="form" action="/tweets/" method="post">
-              <button id="jump">上</button>
               <textarea
                 class="composemessage"
                 name="text"
                 placeholder="Say Something Profound..."
               ></textarea>
               <div class="belowarticle">
-                <p id="counter">140</p>
+                <input id="submit" type="submit" value="Send" />
                 <p id="errormessage">
                   It's Canada! You cannot plead the fifth!
                 </p>
                 <p id="errormessage2">TLDR</p>
-                <input id="submit" type="submit" value="Send" />
+                <p id="counter">140</p>
               </div>
             </form>
           </section>

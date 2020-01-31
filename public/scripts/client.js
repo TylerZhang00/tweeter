@@ -1,10 +1,10 @@
 //SERIALIZE DATA FUNCTION
 function objectifyForm(formArray) {
-  const returnArray = {};
+  const resultsObject = {};
   for (let i = 0; i < formArray.length; i++) {
-    returnArray[formArray[i]["name"]] = formArray[i]["value"];
+    resultsObject[formArray[i]["name"]] = formArray[i]["value"];
   }
-  return returnArray;
+  return resultsObject;
 }
 
 // CREATE AJAX GET REQUEST THAT RENDERS INITIAL TWEETS
@@ -12,6 +12,7 @@ $(function() {
   $("#errormessage").hide();
   $("#errormessage2").hide();
   $("#jump").hide();
+  $(".new-tweet").hide();
 
   const loadTweets = function() {
     $.ajax("/tweets", {
@@ -27,21 +28,23 @@ $(function() {
     event.preventDefault();
 
     // CHECKS ARTICLE FOR ERRORS, IF NONE > AJAX
-    const myFormArray = $(this).serializeArray();
-    const myFormObject = objectifyForm(myFormArray);
+    const myFormArray = $(".composemessage").serializeArray();
+    let myFormObject = objectifyForm(myFormArray);
 
-    if (myFormObject["text"] === "") {
+    if (myFormObject["text"].length === 0) {
       $("#errormessage").show();
       $("#errormessage2").hide();
     } else if (myFormObject["text"].length > 140) {
-      $("#errormessage2").show();
       $("#errormessage").hide();
+      $("#errormessage2").show();
     } else {
       $.ajax("/tweets", {
         method: "POST",
-        data: $(this).serialize()
+        data: myFormArray
       }).then(function() {
         loadTweets();
+        $(".composemessage").val("");
+        $("#counter").text("140");
       });
     }
   });
@@ -54,6 +57,7 @@ $(function() {
   $("#toggle").click(function() {
     $(".new-tweet").slideToggle("fast");
   });
+
   // ERASE ERRORS ON CLICK
   $(".composemessage").click(function() {
     $("#errormessage").hide();

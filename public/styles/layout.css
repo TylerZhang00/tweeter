@@ -14,7 +14,6 @@ html {
 
 main {
   position: relative;
-  margin-top: 70px;
   color: black;
   background-color: #f4f1ec;
   width: 90%;
@@ -33,6 +32,18 @@ body {
     display: flex;
   }
   .halfpage {
-    margin: auto;
+    margin: 120px auto;
+  }
+  .halfpage2 {
+    width: 30%;
+  }
+  .tweetcontent {
+    max-width: 800px;
+    overflow-wrap: break-word;
+  }
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px;
   }
 }

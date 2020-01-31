@@ -1,12 +1,6 @@
-// $(document).ready(function() {
-//   $(".new-tweet form textarea").on("click", function() {
-//     console.log(this); //The this keyword is a reference to the button
-//   });
-// });
-
 $(document).ready(function() {
-  $(".new-tweet form textarea").on("keydown", function(x) {
-    let counter = 140 - this.value.length;
+  $(".new-tweet form textarea").on("input", function(x) {
+    let counter = 141 - this.value.length;
     if (true) {
       counter--;
     }
